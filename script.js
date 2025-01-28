@@ -6,11 +6,13 @@ const reopenButton = document.getElementById("reopen-button");
 const happyNewYearText = document.querySelector("h2"); 
 
 const moneyImages = [
-    { image: "50k.png", probability: 0.445, message: "Bạn đã trúng 50.000 VNĐ! 🎉" }, // 44.5%
-    { image: "100k.png", probability: 0.445, message: "Bạn đã trúng 100.000 VNĐ! 🎉" }, // 44.5%
-    { image: "200k.png", probability: 0.1, message: "Bạn đã trúng 200.000 VNĐ! 🎉" }, // 10%
+    { image: "10k.png", probability: 0.34, message: "Bạn đã trúng 10.000 VNĐ! 🎉" }, // 34%
+    { image: "20k.png", probability: 0.3, message: "Bạn đã trúng 20.000 VNĐ! 🎉" }, // 30%
+    { image: "50k.png", probability: 0.2, message: "Bạn đã trúng 50.000 VNĐ! 🎉" }, // 20%
+    { image: "100k.png", probability: 0.1, message: "Bạn đã trúng 100.000 VNĐ! 🎉" }, // 10%
+    { image: "200k.png", probability: 0.05, message: "Bạn đã trúng 200.000 VNĐ! 🎉" }, // 5%
     { image: "500k.png", probability: 0.01, message: "Bạn đã trúng 500.000 VNĐ! 🎉" }, // 1%
-  ];
+];
 
 let isLiXiOpen = false;
 
