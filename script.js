@@ -4,9 +4,8 @@ const moneyImage = document.getElementById("money-image");
 const instruction = document.querySelector(".instruction");
 const reopenButton = document.getElementById("reopen-button");
 const happyNewYearText = document.querySelector("h2");
-const music = document.getElementById("music"); // Tham chiếu đến thẻ audio
+const music = document.getElementById("music"); 
 
-// Mảng chứa thông tin về các lì xì, bao gồm hình ảnh, xác suất, thông báo và bài hát
 const moneyImages = [
   { image: "10k.png", probability: 0.34, message: "Bạn đã trúng 10.000 VNĐ! 🎉", song: "sounds/10kSong.mp3" }, // 34%
   { image: "20k.png", probability: 0.3, message: "Bạn đã trúng 20.000 VNĐ! 🎉", song: "sounds/20kSong.mp3" }, // 30%
@@ -18,7 +17,6 @@ const moneyImages = [
 
 let isLiXiOpen = false;
 
-// Hàm chọn ngẫu nhiên một lì xì từ mảng moneyImages
 function getRandomMoneyImage() {
   const random = Math.random();
   let cumulativeProbability = 0;
@@ -31,7 +29,7 @@ function getRandomMoneyImage() {
   }
 }
 
-// Hàm mở lì xì
+
 function openLiXi() {
   if (isLiXiOpen) return;
 
@@ -39,50 +37,45 @@ function openLiXi() {
 
   const selectedMoney = getRandomMoneyImage();
 
-  // Ẩn hình ảnh lì xì đóng
   liXiImage.style.animation = "none";
   liXiImage.style.animation = "fadeOut 0.5s ease forwards";
 
   setTimeout(() => {
     liXiImage.classList.add("hidden");
-    moneyImage.src = selectedMoney.image; // Hiển thị hình ảnh tiền
+    moneyImage.src = selectedMoney.image;
     moneyImage.classList.remove("hidden");
     moneyImage.style.animation = "fadeIn 0.5s ease forwards";
 
-    // Hiển thị thông báo
     happyNewYearText.textContent = selectedMoney.message;
 
-    // Ẩn hướng dẫn và hiển thị nút mở lại
     instruction.classList.add("hidden");
     reopenButton.classList.remove("hidden");
 
-    // Phát bài hát tương ứng
-    music.src = selectedMoney.song; // Cập nhật đường dẫn bài hát
-    music.play(); // Phát nhạc
+    music.src = selectedMoney.song; 
+    music.play(); 
   }, 500);
 }
 
-// Hàm đóng lì xì
+
 function closeLiXi() {
   isLiXiOpen = false;
 
-  // Ẩn hình ảnh tiền và hiển thị lại hình ảnh lì xì đóng
+ 
   moneyImage.classList.add("hidden");
   liXiImage.classList.remove("hidden");
   liXiImage.style.animation = "shake 4s infinite";
 
-  // Đặt lại thông báo
+
   happyNewYearText.textContent = "Happy New Year";
 
-  // Ẩn nút mở lại và hiển thị hướng dẫn
+ 
   reopenButton.classList.add("hidden");
   instruction.classList.remove("hidden");
 
-  // Dừng bài hát và đặt lại thời gian phát
+ 
   music.pause();
   music.currentTime = 0;
 }
 
-// Gán sự kiện click cho lì xì và nút mở lại
 liXi.addEventListener("click", openLiXi);
 reopenButton.addEventListener("click", closeLiXi);
