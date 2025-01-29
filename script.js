@@ -7,13 +7,14 @@ const happyNewYearText = document.querySelector("h2");
 const music = document.getElementById("music"); 
 
 const moneyImages = [
-  { image: "10k.png", probability: 0.34, message: "Bạn đã trúng 10.000 VNĐ! 🎉", song: "sounds/10kSong.mp3" }, // 34%
+  { image: "10k.png", probability: 0.48, message: "Bạn đã trúng 10.000 VNĐ! 🎉", song: "sounds/10kSong.mp3" }, // 48%
   { image: "20k.png", probability: 0.3, message: "Bạn đã trúng 20.000 VNĐ! 🎉", song: "sounds/20kSong.mp3" }, // 30%
-  { image: "50k.png", probability: 0.2, message: "Bạn đã trúng 50.000 VNĐ! 🎉", song: "sounds/50kSong.mp3" }, // 20%
-  { image: "100k.png", probability: 0.1, message: "Bạn đã trúng 100.000 VNĐ! 🎉", song: "sounds/100kSong.mp3" }, // 10%
-  { image: "200k.png", probability: 0.05, message: "Bạn đã trúng 200.000 VNĐ! 🎉", song: "sounds/200kSong.mp3" }, // 5%
-  { image: "500k.png", probability: 0.01, message: "Bạn đã trúng 500.000 VNĐ! 🎉", song: "sounds/500kSong.mp3" }, // 1%
+  { image: "50k.png", probability: 0.14, message: "Bạn đã trúng 50.000 VNĐ! 🎉", song: "sounds/50kSong.mp3" }, // 14%
+  { image: "100k.png", probability: 0.05, message: "Bạn đã trúng 100.000 VNĐ! 🎉", song: "sounds/100kSong.mp3" }, // 5%
+  { image: "200k.png", probability: 0.02, message: "Bạn đã trúng 200.000 VNĐ! 🎉", song: "sounds/200kSong.mp3" }, // 2%
+  { image: "500k.png", probability: 0.0005, message: "Bạn đã trúng 500.000 VNĐ! 🎉", song: "sounds/500kSong.mp3" } // 0.05%
 ];
+
 
 let isLiXiOpen = false;
 
